@@ -1,8 +1,9 @@
-import Vue from 'vue'
-import App from './App.vue'
-import { translate as t, n } from '@nextcloud/l10n'
+import { createApp } from 'vue';
+import App from './App.vue';
+import { initializeApp } from './vueBootstrap.js';
 
-Vue.mixin({ methods: { t, n } })
+const app = createApp(App);
 
-const View = Vue.extend(App)
-new View().$mount('#dashboardsearchbar')
+initializeApp(app);
+
+app.mount('#dashboardsearchbar');

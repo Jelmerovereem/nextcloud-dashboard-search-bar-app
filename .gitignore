@@ -1,5 +1,6 @@
 node_modules
 /js/
+/css/
 
 # Ignore Composer dependencies
 /vendor/
