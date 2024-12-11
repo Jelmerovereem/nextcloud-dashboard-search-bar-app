@@ -5,7 +5,7 @@
 	<name>Dashboard Search Bar</name>
 	<summary>A search bar to directly search within search engines like Google and DuckDuckGo.</summary>
 	<description>A search bar widget for the home screen to directly search within search engines like Google and DuckDuckGo.</description>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<licence>mit</licence>
 	<author mail="jelmer_overeem@hotmail.com" homepage="https://github.com/Jelmerovereem">Jelmer Overeem</author>
 	<namespace>DashboardSearchBar</namespace>
