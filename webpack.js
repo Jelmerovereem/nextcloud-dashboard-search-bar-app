@@ -13,8 +13,6 @@ webpackConfig.plugins.push(
 	new ESLintPlugin({
 		extensions: ['js', 'vue'],
 		files: 'src',
-		configType: 'flat',
-		eslintPath: 'eslint/use-at-your-own-risk'
 	}),
 )
 webpackConfig.plugins.push(

@@ -2,9 +2,12 @@
     <div class="search-engine-widget">
         <form @submit.prevent="performSearch">
             <div class="search-container">
-                <NcTextField type="search" :value="searchQuery" @input="fetchSuggestions">
+                <NcTextField type="search"
+                    :label="t('dashboardsearchbar', 'Search')"
+                    :model-value="searchQuery"
+                    @update:model-value="fetchSuggestions">
                 </NcTextField>
-                <NcButton @click="performSearch" type="primary">
+                <NcButton @click="performSearch" variant="primary">
                     <template #icon>
                         <Magnify />
                     </template>
@@ -22,10 +25,10 @@
 
 <script>
 import axios from '@nextcloud/axios';
-import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
-import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
-import NcListItem from '@nextcloud/vue/dist/Components/NcListItem.js'
-import Magnify from 'vue-material-design-icons/Magnify'
+import NcButton from '@nextcloud/vue/components/NcButton'
+import NcTextField from '@nextcloud/vue/components/NcTextField'
+import NcListItem from '@nextcloud/vue/components/NcListItem'
+import Magnify from 'vue-material-design-icons/Magnify.vue'
 
 import { generateUrl } from '@nextcloud/router'
 
@@ -52,8 +55,8 @@ export default {
             window.open(duckDuckGoUrl, "_blank");
         },
 
-        async fetchSuggestions(event) {
-            this.searchQuery = event.target.value;
+        async fetchSuggestions(query) {
+            this.searchQuery = query;
             if (this.searchQuery.length > 2) {
                 try {
                     const response = await axios.get(generateUrl("/apps/dashboardsearchbar/suggestions"), {
